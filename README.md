@@ -4,9 +4,9 @@
 # Usage
 ## Its recommended that you keep any script inside of your map project empty until you reload the script the script included in the map will be active. 
 ## You also must be in your map with no players to reload the script.
-### 1. Place the mod file into the BepInEx/plugins folder.
+### 1. Place the mod file into the `BepInEx/plugins` folder.
 ### 2. Start your game.
-### 3. Navigate to your Gorilla Tag directory, then navigate to the BepInEx/Lua Scripting folder.
+### 3. Navigate to your Gorilla Tag directory, then navigate to the `BepInEx/Lua Scripting` folder.
 ### 4. Edit the `script.lua` file as needed to make your changes.
 
 # Discord
