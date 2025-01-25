@@ -10,7 +10,7 @@ namespace RuntimeScripting
     public class Plugin : BaseUnityPlugin
     {
         bool reloadButtonVisible = true;
-        bool autoReload = false;
+        
         void Awake()
         {
             if (!File.Exists("BepInEx/Lua Scripting"))
@@ -22,6 +22,7 @@ namespace RuntimeScripting
                 File.CreateText("BepInEx/Lua Scripting/script.lua");
             }
         }
+        
         void Update()
         {
             if (Keyboard.current.gKey.wasPressedThisFrame)
@@ -29,6 +30,7 @@ namespace RuntimeScripting
                 reloadButtonVisible = !reloadButtonVisible;
             }
         }
+        
         void OnGUI()
         {
             if (!reloadButtonVisible)
@@ -41,12 +43,6 @@ namespace RuntimeScripting
                 return;
 
             ReloadScript();
-
-            /*if (GUILayout.Button("Autoreload: " + (autoReload ? "Enabled" : "Disabled")))
-            {
-                autoReload = !autoReload;
-            }*/
-
         }
 
         void ReloadScript()
