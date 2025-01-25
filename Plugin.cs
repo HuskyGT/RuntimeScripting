@@ -10,19 +10,19 @@ namespace RuntimeScripting
     public class Plugin : BaseUnityPlugin
     {
         bool reloadButtonVisible = true;
-        
+
         void Awake()
         {
-            if (!File.Exists("BepInEx/Lua Scripting"))
+            if (!File.Exists(Constants.scriptingFolderPath))
             {
-                Directory.CreateDirectory("BepInEx/Lua Scripting");
+                Directory.CreateDirectory(Constants.scriptingFolderPath);
             }
-            if (!File.Exists("BepInEx/Lua Scripting/script.lua"))
+            if (!File.Exists(Constants.scriptPath))
             {
-                File.CreateText("BepInEx/Lua Scripting/script.lua");
+                File.WriteAllText(Constants.scriptPath, "print(\"Hello, World!\")");
             }
         }
-        
+
         void Update()
         {
             if (Keyboard.current.gKey.wasPressedThisFrame)
@@ -30,7 +30,7 @@ namespace RuntimeScripting
                 reloadButtonVisible = !reloadButtonVisible;
             }
         }
-        
+
         void OnGUI()
         {
             if (!reloadButtonVisible)
@@ -48,7 +48,7 @@ namespace RuntimeScripting
         void ReloadScript()
         {
             Debug.Log("Reloading Map Script...");
-            var script = File.ReadAllText("BepInEx/Lua Scripting/script.lua") ?? "";
+            var script = File.ReadAllText(Constants.scriptPath) ?? "";
             if (script == "")
                 return;
 
