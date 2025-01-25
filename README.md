@@ -7,7 +7,7 @@
 ### 1. Place the mod file into the `BepInEx/plugins` folder.
 ### 2. Start your game.
 ### 3. Navigate to your Gorilla Tag directory, then navigate to the `BepInEx/Lua Scripting` folder.
-### 4. Edit the `script.lua` file as needed to make your changes.
+### 4. Edit the `script.lua` file as needed to make your changes, then press Reload Map Script in the top left of your screen.
 
 # Discord
 ### https://discord.gg/mDxtRwr3je
